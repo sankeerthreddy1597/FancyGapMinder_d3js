@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>CSE 578 - Fall 2020 - Homework #4</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='css/styles.css'>
+    <script src='https://d3js.org/d3.v5.min.js'></script>
+    <script src='scripts/homework4.js'></script>
+
+  </head>
+  <body>
+    <div id='wrapper' class="container_fluid p-0">
+    <div class="container text-center">
+      <h2>Fancy GapMinder</h2>
+      <h4>Chirra Reddy Sai Sankeerth Reddy - schirrar@asu.edu - 1217068242</h4>
+      <hr class="hr_class">
+      <h1>World Data Chart</h1>
+
+      <div class="row">
+        <div class="col-md-3">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="dp_x">X-Attribute:</label>
+            </div>
+            <select class="custom-select" id="dp_x" onchange="animate_circle();">
+                <option value="1" selected>Income</option>
+                <option value="2">Life Expectancy</option>
+                <option value="3">Population</option>
+                <option value="4">Child Mortality</option>
+                <option value="5">Children per woman</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="dp_y">Y-Attribute:</label>
+            </div>
+            <select class="custom-select" id="dp_y" onchange="animate_circle();">
+                <option value="2" selected>Life Expectancy</option>  
+                <option value="1">Income</option>
+                <option value="3">Population</option>
+                <option value="4">Child Mortality</option>
+                <option value="5">Children per woman</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text" for="world_region">Region:</label>
+            </div>
+            <select class="custom-select" id="world_region" onchange="anim_circle_reg();">
+                <option value="all" selected>All</option>
+                <option value="South Asia">South Asia</option>
+                <option value="Europe & Central Asia">Europe & Central Asia</option>
+                <option value="Middle East & North Africa">Middle East & North Africa</option>
+                <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+                <option value="Latin America & Caribbean">Latin America & Caribbean</option>
+                <option value="East Asia & Pacific">East Asia & Pacific</option>
+                <option value="North America">North America</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default">Year:</span>
+            </div>
+            <input type="number" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" value=1800 min=1800 max=2020 id="text-input-year" onchange="animate_circle();">
+          </div>
+        </div>
+      </div>
+
+      <svg id='scatterplotchart'></svg>
+      <br/>
+    <div class="row">
+      <div class="col-md-1 play_slider">
+        <button type="button" class="btn btn-dark" id="animate_btn"><i onclick="togglePlay(this)" class="fa fa-play"></i> </button>
+      </div>
+      <div class="col-md-11 year_slider">
+        <input type="range" min="1800" max="2020" value="1800" id="year-input" disabled="true">
+      </div>
+    </div>
+
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
